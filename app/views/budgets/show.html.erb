@@ -1,7 +1,15 @@
 <p>
-  <strong>Title:</strong>
   <%= @budget.title %>
-</p>
-
 <%= link_to 'Edit', edit_budget_path(@budget) %> |
 <%= link_to 'Back', budgets_path %>
+</p>
+
+<%= link_to 'New Expense', new_budget_expense_path( @budget ) %>
+
+<table>
+<tr>
+	<th>Expense</th>
+	<th>Value</th>
+</tr>
+<%= render @budget.expenses %>
+</table>

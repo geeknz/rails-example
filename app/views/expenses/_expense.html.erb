@@ -1,0 +1,6 @@
+<tr>
+	<td><%= expense.title %></td>
+	<td><%= expense.value %></td>
+	<td><%= link_to 'Delete', [ expense.budget, expense ], method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+</tr>
