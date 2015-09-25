@@ -9,6 +9,7 @@ class BudgetsController < ApplicationController
 	end
 
 	def new
+		@budget = Budget.new
 	end
 
 	def edit
