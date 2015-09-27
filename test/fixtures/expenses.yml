@@ -3,9 +3,11 @@
 one:
   title: MyString
   value: 9.99
+  category: MyString
   budget_id: 
 
 two:
   title: MyString
   value: 9.99
+  category: MyString
   budget_id: 
