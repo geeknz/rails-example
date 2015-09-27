@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :budgets do
     resources :expenses
+    resources :incomes
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

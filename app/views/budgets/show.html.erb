@@ -1,11 +1,28 @@
 <p>
   <%= @budget.title %>
+</p>
+<p>
+	Balance <%= @budget.incomes.sum( :value ) - @budget.expenses.sum( :value ) %>
+</p>
+<p>
 <%= link_to 'Edit', edit_budget_path(@budget) %> |
 <%= link_to 'Back', budgets_path %>
 </p>
 
-<%= link_to 'New Expense', new_budget_expense_path( @budget ) %>
+<%= link_to 'New Income', new_budget_income_path( @budget ) %>
+<table>
+<tr>
+	<th>Income</th>
+	<th>Value</th>
+</tr>
+<%= render @budget.incomes %>
+<tr>
+	<td>Total</td>
+	<td><%= @budget.incomes.sum( :value ) %></td>
+</tr>
+</table>
 
+<%= link_to 'New Expense', new_budget_expense_path( @budget ) %>
 <table>
 <tr>
 	<th>Expense</th>
@@ -13,4 +30,8 @@
 	<th>Category</th>
 </tr>
 <%= render @budget.expenses %>
+<tr>
+	<td>Total</td>
+	<td><%= @budget.expenses.sum( :value ) %></td>
+</tr>
 </table>

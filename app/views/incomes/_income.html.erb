@@ -1,0 +1,6 @@
+<tr>
+	<td><%= income.title %></td>
+	<td><%= income.value %></td>
+	<td><%= link_to 'Delete', [ income.budget, income ], method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+</tr>

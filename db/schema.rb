@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150927082336) do
+ActiveRecord::Schema.define(version: 20150927082625) do
 
   create_table "budgets", force: :cascade do |t|
     t.string   "title"
@@ -29,5 +29,15 @@ ActiveRecord::Schema.define(version: 20150927082336) do
   end
 
   add_index "expenses", ["budget_id"], name: "index_expenses_on_budget_id"
+
+  create_table "incomes", force: :cascade do |t|
+    t.string   "title"
+    t.decimal  "value",      precision: 10, scale: 2
+    t.integer  "budget_id"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "incomes", ["budget_id"], name: "index_incomes_on_budget_id"
 
 end
